@@ -72,6 +72,10 @@
       integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
       crossorigin="anonymous"
     ></script>
+    <script>
+      var currDay = dayjs();
+      $("#currentDay").text(currDay.format("dddd, MMMM D"));
+    </script>
 
     <script src="script.js"></script>
   </body>
