@@ -8,7 +8,6 @@ var userInput = $("textarea");
 
 $(function () {
   saveButton.on("click", function () {
-    // console.log("Hello");
     localStorage.setItem("To Do: ", userInput.value);
   });
 
@@ -25,10 +24,13 @@ $(function () {
   // attribute of each time-block be used to conditionally add or remove the
   // past, present, and future classes? How can Day.js be used to get the
   // current hour in 24-hour time?
-  //
+  
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
   //
   // TODO: Add code to display the current date in the header of the page.
+
+  var currDay = dayjs();
+      $("#currentDay").text(currDay.format("dddd, MMMM D"));
 });
