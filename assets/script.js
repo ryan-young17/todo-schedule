@@ -5,19 +5,39 @@
 var container = $(".container-lg");
 var saveButton = $(".saveBtn");
 var userInput = $("textarea");
+var timeBlock = $(".time-block");
 
 $(function () {
   saveButton.on("click", function () {
     var text = $(this).siblings().eq(1).val();
     var hour = $(this).parent().attr("id");
     localStorage.setItem(hour, text);
+    
+    // for (var i = 9; i <= 17; i++) {
+    //   var todo = localStorage.getItem(text[i]);
+    //   $("#hour-" + i).children().eq(1).val(todo);
+    // }
+
   });
-
-
-  var currDay = dayjs();
-      $("#currentDay").text(currDay.format("dddd, MMMM D"));
 });
 
+
+for (var i = 9; i <= 17; i++) {
+  var timeId = $("#hour-" + i);
+  var currentHour = dayjs().hour();
+  if (timeId.splice("-") === currentHour) {
+    timeBlock.addClass("present");
+  } 
+  else if (timeId.splice("-") < currentHour) {
+    timeBlock.addClass("past");
+  } 
+  else if (timeId.splice("-") > currentHour) {
+    timeBlock.addClass("future");
+  }
+};
+
+var currDay = dayjs();
+      $("#currentDay").text(currDay.format("dddd, MMMM D"));
 
 
     // TODO: Add a listener for click events on the save button. This code should
