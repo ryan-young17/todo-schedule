@@ -4,11 +4,12 @@
 
 var container = $(".container-lg");
 var saveButton = $(".btn");
-var userInput = $(".description");
+var userInput = $("textarea");
 
 $(function () {
-  saveButton.on("click", function (event) {
+  saveButton.on("click", function () {
     // console.log("Hello");
+    localStorage.setItem("To Do: ", userInput.value);
   });
 
     // TODO: Add a listener for click events on the save button. This code should
