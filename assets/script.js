@@ -15,7 +15,6 @@ var currentHour = dayjs().hour();
 
 for (var i = 9; i <= 17; i++) {
   var timeId = $("#hour-" + i);
-  console.log(currentHour);
   if (i === currentHour) {
     timeId.addClass("present");
   } 
