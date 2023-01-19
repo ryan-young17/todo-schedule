@@ -1,4 +1,4 @@
-# Challenge 05 - Work Day Scheduler
+# Work Day Scheduler
 
 [Link to project](https://ryan-young17.github.io/todo-schedule/)
 
